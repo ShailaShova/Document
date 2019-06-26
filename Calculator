@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+	  <head>
+	  <title>Calculator</title>
+	  <link rel="stylesheet" href="styles.css">
+
+	  <script type="text/javascript">
+
+
+		    function c(val)
+	      	{
+		      document.getElementById("d").value=val;
+		      }
+
+		    function v(val)
+	    	{
+		    document.getElementById("d").value+=val;
+		    }
+
+		   function back(a,b)
+		    {
+ 		    var value = document.getElementById("d").value;
+    		document.getElementById("d").value = value.substr(0, value.length - 1);
+		    }
+		
+		    function e() 
+	    	{ 
+		      try 
+		      { 
+  		    c(eval(document.getElementById("d").value)) 
+		      } 
+
+		      catch(e) 
+	      	{
+  		    c('0') 
+		      } 
+
+		   } 
+
+	</script>
+
+	</head>
+	
+<body>
+  <div id="calculator" >
+    <div id="result">
+      <input type="text" id="d" size="20"  /> 
+   </div>
+  <br></br>
+
+
+    <div class="keys">
+    	<table>
+    		<tr>
+    		<td><input type="button" class="upperButton"  value="<" onclick='back()'/></td>
+     		<td><input type="button" class="upperButton"  value="CE" onclick='c(" ")'/></td>
+       		<td><input type="button" class="upperButton"  value="C" onclick='c(" ")'/></td>
+      		<td><input type="button" class ="operands" value="/" onclick='v("/")'/> </td>
+    		</tr>
+   
+    		<tr>
+    		<td><input type="button" class="numbers"  value="7" onclick='v("7")'/></td>
+    	 	<td><input type="button" class="numbers"  value="8" onclick='v("8")'/></td>
+        		<td><input type="button" class="numbers"  value="9" onclick='v("9")'/></td>
+    		<td><input type="button" class="operands" value="*" onclick='v("*")'/> </td>
+    		</tr>
+
+    		<tr>
+    		<td><input type="button" class="numbers"  value="4" onclick='v("4")'/></td>
+       		<td><input type="button" class="numbers"  value="5" onclick='v("5")'/></td>
+       		<td><input type="button" class="numbers"  value="6" onclick='v("6")'/> </td>
+    		<td><input type="button" class="operands"  value="-" onclick='v("-")'/></td>
+    		</tr>
+
+    		<tr>
+    		<td><input type="button" class="numbers"  value="1" onclick='v("1")'/></td>
+      		<td><input type="button" class="numbers"  value="2" onclick='v("2")'/></td>
+      		<td><input type="button" class="numbers"  value="3" onclick='v("3")'/></td>
+    		<td><input type="button" class="operands"  value="+" onclick='v("+")'/></td>
+    		</tr>
+
+    		<tr>
+    		<td><input type="button" class="numbers"  value="0" onclick='v("0")'/></td>
+      	<td><input type="button" class="numbers"  value="." onclick='v(".")'/></td>
+    		<td><input type="button" id="equal" value="=" onclick='e()'/></td>
+    		<td><input type="button" class="operands"  value="%" onclick='v("%")'/></td>
+    		</tr>
+    		
+	  </table>
+  </div>
+</div>
+</body>
+</html>
